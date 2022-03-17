@@ -22,7 +22,7 @@ public final class Constants {
     public class Controls
     {
         public static final int DRIVER_CONTROLLER_MOVE_AXIS = 1; //not sure about these constants: Update they work now dont change these
-        public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 2;
+        public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 2; //2
         public static final int DRIVE_CONTROLS = 0;
     }
     
@@ -33,17 +33,17 @@ public final class Constants {
     public static final int kMCIDShooter = 5; //shooter motor controller id ( Spark max )
     
     
-    public static final double kIntakeActuatorExtendSpeed = 0.5; // the speed of the motor that extends and retracts the intake arms (VictorSPX)
-    public static final double kIntakeActuatorRetractSpeed = 0.5; // the speed of the motor that spins to bring a ball aboard (VictorSPX)
-    public static final double kIntakeSpinnerSpeed = -0.5;  //the speed of the motor that spins to first grab the ball (VictorSPX)
-    public static final double kUptakeSpeed = 0.3;  //the speed of the motor that spins to push the ball to the shooter motor (TalonSRX)
-    public static final double kShooterSpeed = -0.3;  //the speed of the motor that spins to shoot the ball (CAN Spark)
+    public static final double kIntakeActuatorExtendSpeed = 0.75; // the speed of the motor that extends and retracts the intake arms (VictorSPX)
+    public static final double kIntakeActuatorRetractSpeed = -0.75; // the speed of the motor that spins to bring a ball aboard (VictorSPX)
+    public static final double kIntakeSpinnerSpeed = -0.75;  //the speed of the motor that spins to first grab the ball (VictorSPX)
+    public static final double kUptakeSpeed = 0.75;  //0.75 the speed of the motor that spins to push the ball to the shooter motor (TalonSRX)
+    public static final double kShooterSpeed = -0.9;  //the speed of the motor that spins to shoot the ball (CAN Spark)
     
     public static final int kIntakeExtendBtn = 5;
     public static final int kIntakeRetractBtn = 3;
     public static final int kSpinnerBtn = 4;
-    public static final int kUptakeBtn = 2;
-    public static final int kShootBtn = 1;
+    public static final int kUptakeBtn = 1;
+    public static final int kShootBtn = 2;
     
     // Joystick Buttons
     //      1

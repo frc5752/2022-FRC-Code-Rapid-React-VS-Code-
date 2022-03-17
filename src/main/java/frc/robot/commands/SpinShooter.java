@@ -22,7 +22,7 @@ public class SpinShooter extends CommandBase
     public void initialize()
     {
         mShooterSubsystem.setShooterMotor(Constants.kShooterSpeed);
-        RobotContainer.m_vision.setString( "[SPIN SHOOTER] Initialized" );
+        //RobotContainer.m_vision.setString( "[SPIN SHOOTER] Initialized" );
 
     }
     

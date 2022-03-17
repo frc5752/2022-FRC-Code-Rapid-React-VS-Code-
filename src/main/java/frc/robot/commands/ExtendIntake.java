@@ -16,25 +16,16 @@ public class ExtendIntake extends CommandBase
     {
         mIntakeSubsystem = RobotContainer.m_intake;
         mDriverController = m_driver_controller;
-        //addRequirements(Robot.m_intake);
     }
     
     @Override
     public void initialize()
     {
         // stop the motor before changing direction
-        RobotContainer.m_vision.setString( "[EXTEND INTAKE] Initializing..." );
-        mIntakeSubsystem.setActuatorMotor(0);
-        RobotContainer.m_vision.setString( "[EXTEND INTAKE] Zeroed" );
-        try 
-        {
-            wait(250);
-        } catch (InterruptedException e) 
-        {
-            e.printStackTrace();
-        }
+        //RobotContainer.m_vision.setString( "[EXTEND INTAKE] Initializing..." );
+        //mIntakeSubsystem.setActuatorMotor(0);
+    
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorExtendSpeed);
-        RobotContainer.m_vision.setString( "[EXTEND INTAKE] Initialized" );
 
     }
     

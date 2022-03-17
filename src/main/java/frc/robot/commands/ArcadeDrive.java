@@ -19,11 +19,11 @@ public class ArcadeDrive extends CommandBase {
   private Joystick mDriverController;
   private static DrivetrainSubsystem m_drivetrain;
   
-  public ArcadeDrive(Joystick m_driver_controller) 
+  public ArcadeDrive(Joystick m_driverController, DrivetrainSubsystem m_driveTrain) 
   {
     // Use addRequirements() here to declare subsystem dependencies.
-    m_drivetrain = RobotContainer.m_drivetrain;
-    mDriverController = m_driver_controller;
+    m_drivetrain = m_driveTrain;
+    mDriverController = m_driverController;
 
     addRequirements(RobotContainer.m_drivetrain);
   }
@@ -32,7 +32,8 @@ public class ArcadeDrive extends CommandBase {
   @Override
   public void initialize()
   {
-    RobotContainer.m_vision.setString( "[ARCADE DRIVE] Initialized" );
+    m_drivetrain.arcadeDrive(0, 0);
+    //RobotContainer.m_vision.setString( "[ARCADE DRIVE] Initialized and Zeroed" );
   }
   
   // Called every time the scheduler runs while the command is scheduled.
@@ -41,8 +42,7 @@ public class ArcadeDrive extends CommandBase {
   {
     double moveSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_MOVE_AXIS);
     double rotateSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_ROTATE_AXIS);
-    //Robot.m_vision.setString( rotateSpeed. );
-    m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+    m_drivetrain.arcadeDrive(-1*rotateSpeed, moveSpeed);
   }
   
   // Called once the command ends or is interrupted.

@@ -28,7 +28,7 @@ public class SpinSpinner extends CommandBase
     public void initialize()
     {
         mIntakeSubsystem.setSpinnerMotor(Constants.kIntakeSpinnerSpeed);
-        RobotContainer.m_vision.setString( "[SPIN SPINNER] Initialized" );
+       // RobotContainer.m_vision.setString( "[SPIN SPINNER] Initialized" );
 
     }
     

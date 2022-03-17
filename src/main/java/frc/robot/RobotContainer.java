@@ -5,9 +5,11 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.ExtendIntake;
 import frc.robot.commands.RetractIntake;
 import frc.robot.commands.SpinShooter;
@@ -49,15 +51,12 @@ public class RobotContainer
     public RobotContainer() 
     {
         configureButtonBindings();
-        m_drivetrain.setDefaultCommand(
-        new RunCommand(
-        () ->
-        m_drivetrain.arcadeDrive(
-        m_driverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_MOVE_AXIS),
-        m_driverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_ROTATE_AXIS))));
+
+        //m_drivetrain.setDefaultCommand(new RunCommand(() -> DrivetrainSubsystem.ArcadeDrive(m_driverController, m_drivetrain)));
         //autoInit = new SequentialCommandGroup( {} );
         //teleInit = new SequentialCommandGroup( {} );
-        initTelemetry();
+        //initTelemetry();
+        m_drivetrain.setDefaultCommand(new ArcadeDrive(m_driverController, m_drivetrain));
     }
     
     
@@ -70,27 +69,27 @@ public class RobotContainer
         new JoystickButton(m_driverController, Constants.kIntakeExtendBtn).whenPressed( new ExtendIntake(m_driverController) );
         new JoystickButton(m_driverController, Constants.kUptakeBtn).whenPressed( new Uptake(m_driverController) );
         
-        m_vision.setString( "[OI>Buttons] Created" );
+        //m_vision.setString( "[OI>Buttons] Created" );
         
     }
     
     /**
     * Use this method to init all the subsystems' telemetry stuff.
     */
-    private void initTelemetry() 
-    {
+    //private void initTelemetry() 
+    //{
         //SmartDashboard.putData("PDP", pdp);
         //SmartDashboard.putData("PCM", pcm);
         // SmartDashboard.putData("Drivetrain", drivetrain);
         // SmartDashboard.putData("Lemonlight", targetingLimelight);
         // SmartDashboard.putData("Lemonlight", ballDetectionLimelight);
-        //SmartDashboard.putData("Shooter", shooter);
+        //SmartDashboard.putData("Shooter", m_shooter);
         //SmartDashboard.putData("Conveyor", conveyor);
         // SmartDashboard.putData("Intake", intake);
         // SmartDashboard.putData("Color Sensor", colorSensor);
         // SmartDashboard.putData("Lidar", lidar);
         //SmartDashboard.putData("Climb", climb);
-    }
+    //}
     
     /**
     * runs when the robot gets disabled.

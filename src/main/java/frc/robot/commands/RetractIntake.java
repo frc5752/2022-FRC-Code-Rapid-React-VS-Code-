@@ -17,7 +17,6 @@ public class RetractIntake extends CommandBase
     {
         mDriverController = m_driver_controller;
         mIntakeSubsystem = RobotContainer.m_intake;
-        //addRequirements(Robot.m_intake);
     }
     
     
@@ -25,18 +24,10 @@ public class RetractIntake extends CommandBase
     public void initialize()
     {
         // Stop the motor before reversing direction
-        RobotContainer.m_vision.setString( "[RETRACT INTAKE] Initializing" );
-        mIntakeSubsystem.setActuatorMotor(0);
-        RobotContainer.m_vision.setString( "[RETRACT INTAKE] Zeroed" );
-        try 
-        {
-            wait(250);
-        } catch (InterruptedException e) 
-        {
-            e.printStackTrace();
-        }
+        //RobotContainer.m_vision.setString( "[RETRACT INTAKE] Initializing" );
+        //mIntakeSubsystem.setActuatorMotor(0);
+ 
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorRetractSpeed);
-        System.err.println( "[RETRACT INTAKE] command initialized..." );
     }
     
     @Override
