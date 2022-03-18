@@ -39,7 +39,7 @@ public class RobotContainer
     public final static ShooterSubsystem m_shooter = new ShooterSubsystem();
     public final static IntakeSubsystem m_intake = new IntakeSubsystem();
     //private final ClimberSubsystem m_climber = new ClimberSubsystem();
-    public final static VisionSubsystem m_vision = new VisionSubsystem();
+    //public final static VisionSubsystem m_vision = new VisionSubsystem();
     private final Joystick m_driverController = new Joystick(0);
     
     //private final Command m_autoCommand = new InstantCommand( m_shooter::enable, m_shooter )

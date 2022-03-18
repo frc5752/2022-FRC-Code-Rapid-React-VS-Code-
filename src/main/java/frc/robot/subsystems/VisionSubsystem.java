@@ -21,9 +21,9 @@ public class VisionSubsystem extends SubsystemBase
         m_visionThread = new Thread( () ->
         {
             UsbCamera camera = CameraServer.startAutomaticCapture();
-            camera.setResolution(1280, 768);
+            camera.setResolution(640, 480);
             CvSink cvSink = CameraServer.getVideo();
-            CvSource outputStream = CameraServer.putVideo("Processed Stream",1024,768);
+            CvSource outputStream = CameraServer.putVideo("Processed Stream",640,480);
             Mat mat=new Mat();
             while (!Thread.interrupted())
             {

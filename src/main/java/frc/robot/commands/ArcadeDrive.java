@@ -16,8 +16,10 @@ import frc.robot.subsystems.DrivetrainSubsystem;
 
 public class ArcadeDrive extends CommandBase {
   //Creates a new ArcadeDrive.
-  private Joystick mDriverController;
-  private static DrivetrainSubsystem m_drivetrain;
+
+  // changed from pivate to public
+  public Joystick mDriverController;
+  public static DrivetrainSubsystem m_drivetrain;
   
   public ArcadeDrive(Joystick m_driverController, DrivetrainSubsystem m_driveTrain) 
   {
@@ -42,7 +44,10 @@ public class ArcadeDrive extends CommandBase {
   {
     double moveSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_MOVE_AXIS);
     double rotateSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_ROTATE_AXIS);
-    m_drivetrain.arcadeDrive(-1*rotateSpeed, moveSpeed);
+    if( moveSpeed > 0.75 ) moveSpeed = 0.75;
+    if( moveSpeed < -0.75 ) moveSpeed = -0.75;
+    
+    m_drivetrain.arcadeDrive(0.5*rotateSpeed, 0.5*moveSpeed);
   }
   
   // Called once the command ends or is interrupted.
