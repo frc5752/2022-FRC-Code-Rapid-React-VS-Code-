@@ -1,43 +1,46 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.IntakeSubsystem;
 
-public class ExtendIntake extends CommandBase
-{
-    private static IntakeSubsystem mIntakeSubsystem;
-    private Joystick mDriverController;
+public class SpinSpinner_timed extends CommandBase
+{  
+    public static IntakeSubsystem mIntakeSubsystem;
+    Timer my_timer = new Timer();
+    double timeout = 0;
 
-    public ExtendIntake(Joystick m_driver_controller)
+    public SpinSpinner_timed( double t )
     {
         mIntakeSubsystem = RobotContainer.m_intake;
-        mDriverController = m_driver_controller;
+        timeout = t;
     }
+    
     
     @Override
     public void initialize()
     {
-        mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorExtendSpeed);
+        my_timer.reset();
+        mIntakeSubsystem.setSpinnerMotor(Constants.kIntakeSpinnerSpeed);
+        my_timer.start();
     }
     
     @Override
     public void execute()
     {
-
-       }
+    }
     
     @Override
     public boolean isFinished()
     {
-        return !mDriverController.getRawButton( Constants.kIntakeExtendBtn );
+        return my_timer.hasElapsed(timeout);
     }
     
     @Override
     public void end(boolean interrupted)
     {
-        mIntakeSubsystem.setActuatorMotor(0);
+        mIntakeSubsystem.setSpinnerMotor(0);
     }
 }

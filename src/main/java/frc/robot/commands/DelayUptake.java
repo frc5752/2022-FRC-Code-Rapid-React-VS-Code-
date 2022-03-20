@@ -9,7 +9,7 @@ public DelayUptake( double delay )
 {
     addCommands( 
 		new WaitCommand(delay),
-        new UptakeInAuto(2)
+        new Uptake_timed(2)
     );
     
 }

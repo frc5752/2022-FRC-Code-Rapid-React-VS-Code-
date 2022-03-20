@@ -20,10 +20,12 @@ public class SpinupAndShoot extends ParallelCommandGroup
 	// t=  0    1    2   3   4    5 
 	//SS=************************** 
 	//DU=................********** (where the .'s represent waiting)
+
     public SpinupAndShoot(ShooterSubsystem m_SpinnerSubsystem)
     {
+
        addCommands(
-		   new SpinShooterInAuto(5),
+		   new SpinShooter_timed(5),
        new DelayUptake(3)
        );
     }
