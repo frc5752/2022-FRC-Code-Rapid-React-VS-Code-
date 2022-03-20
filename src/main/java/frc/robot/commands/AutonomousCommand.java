@@ -8,14 +8,14 @@ public class AutonomousCommand extends SequentialCommandGroup
     {
        addCommands(
         new SpinShooter_timed(3),
-        new UptakeAndShoot(),
+        new UptakeAndShoot_group(),
         new ArcadeDrive_timed(-0.5, 3),
-        new ExtendAndSpin(),
+        new ExtendAndSpin_group(),
         new SpinSpinner_timed(1),
-        new RetractAndSpin(),
+        new RetractAndSpin_group(),
         new ArcadeDrive_timed(0.5, 3),
         new SpinSpinner_timed(3),
-        new UptakeAndShoot()
+        new UptakeAndShoot_group()
        );
     }
 }
