@@ -22,7 +22,6 @@ public class Uptake extends CommandBase
     public void initialize()
     {
         mShooterSubsystem.setUptakeMotor(Constants.kUptakeSpeed);
-        //RobotContainer.m_vision.setString( "[UPTAKE] Initialized" );
     }
     
     @Override
