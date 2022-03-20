@@ -35,7 +35,6 @@ public class ArcadeDrive extends CommandBase {
   public void initialize()
   {
     m_drivetrain.arcadeDrive(0, 0);
-    //RobotContainer.m_vision.setString( "[ARCADE DRIVE] Initialized and Zeroed" );
   }
   
   // Called every time the scheduler runs while the command is scheduled.
@@ -44,10 +43,10 @@ public class ArcadeDrive extends CommandBase {
   {
     double moveSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_MOVE_AXIS);
     double rotateSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_ROTATE_AXIS);
-    if( moveSpeed > 0.75 ) moveSpeed = 0.75;
-    if( moveSpeed < -0.75 ) moveSpeed = -0.75;
     
     m_drivetrain.arcadeDrive(0.5*rotateSpeed, 0.5*moveSpeed);
+    //these may be swapped
+    //changed rotate speed multiplier from .75 to .1
   }
   
   // Called once the command ends or is interrupted.

@@ -8,8 +8,8 @@ import frc.robot.subsystems.ShooterSubsystem;
 
 public class SpinShooter extends CommandBase
 {
-    private static ShooterSubsystem mShooterSubsystem;
     private Joystick mDriverController;
+    private static ShooterSubsystem mShooterSubsystem;
 
     public SpinShooter(Joystick m_driver_controller)
     {
@@ -22,8 +22,6 @@ public class SpinShooter extends CommandBase
     public void initialize()
     {
         mShooterSubsystem.setShooterMotor(Constants.kShooterSpeed);
-        //RobotContainer.m_vision.setString( "[SPIN SHOOTER] Initialized" );
-
     }
     
     @Override
@@ -40,6 +38,6 @@ public class SpinShooter extends CommandBase
     @Override
     public void end(boolean interrupted)
     {
-        RobotContainer.m_shooter.setShooterMotor(0);
+        mShooterSubsystem.setShooterMotor(0);
     }
 }

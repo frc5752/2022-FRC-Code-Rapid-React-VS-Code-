@@ -39,12 +39,13 @@ public final class Constants {
     public static final double kUptakeSpeed = 0.75;  //0.75 the speed of the motor that spins to push the ball to the shooter motor (TalonSRX)
     public static final double kShooterSpeed = -0.9;  //the speed of the motor that spins to shoot the ball (CAN Spark)
     
-    public static final int kIntakeExtendBtn = 5;
-    public static final int kIntakeRetractBtn = 3;
-    public static final int kSpinnerBtn = 4;
-    public static final int kUptakeBtn = 1;
-    public static final int kShootBtn = 2;
+    public static final int kIntakeExtendBtn = 6; //5
+    public static final int kIntakeRetractBtn = 2; //3
+    public static final int kSpinnerBtn = 1; //4
+    public static final int kUptakeBtn = 3; //1
+    public static final int kShootBtn = 5; //2
     
+
     // Joystick Buttons
     //      1
     //2  5  *  6
