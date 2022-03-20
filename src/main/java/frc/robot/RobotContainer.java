@@ -31,8 +31,6 @@ import frc.robot.subsystems.ShooterSubsystem;
 */
 public class RobotContainer 
 {
-    
-    
     // Subsystems
     public final static DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
     public final static ShooterSubsystem m_shooter = new ShooterSubsystem();
@@ -55,6 +53,8 @@ public class RobotContainer
         camera.setResolution(640, 480); //                       // the other line to comment out
         
         configureButtonBindings();
+
+        // This is going to perpetually run while in TeleOp
         m_drivetrain.setDefaultCommand(new ArcadeDrive(m_driverController, m_drivetrain));
     }
     
@@ -86,10 +86,6 @@ public class RobotContainer
     */
     public void robotInit() 
     {
-        //gyro.calibrate();
-        //ShuffleboardDriver.init();
-        
-        
     }
     
     /**
@@ -115,44 +111,6 @@ public class RobotContainer
     public Command getAutonomousCommand()
     {
         return m_autoCommand;
-        // // An ExampleCommand will run in autonomous
-        //  // sets up all the splines so we dont need to spend lots of time
-        // // turning the json files into trajectorys when we want to run them
-        // String ball1 = "paths\1.path";
-        // try {
-            //     Command fball1 = Functions.splineCommandFromFile(drivetrain, ball1);
-            //     // possible 4 ball auto
-            //     auto = new SequentialCommandGroup(
-            //             autoInit,
-            //             new PrintCommand("paiosuibsfub"),
-            //             new ShooterAtStart(shooter, conveyor).withTimeout(10),
-            //             new PrintCommand("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa"),
-            //             fball1
-            //             // fullAutoShooterAssembly,
-            //             // fullAutoIntake.get(),
-            //             // fullAutoShooterAssembly,
-            //             // fullAutoIntake.get(),
-            //             // fullAutoShooterAssembly
-            //             );
-            
-            //     return auto;
-            // } catch (Exception e) {
-                //     System.out.println("An error occured when making autoInit: " + e);
-                // }
-                
-                // return new SequentialCommandGroup(
-                //autoInit,
-                //new ShooterAtStart(shooter, conveyor).withTimeout(10),
-                //new InstantCommand(() -> {drivetrain.setLeftMotorPower(-0.3); drivetrain.setRightMotorPower(-0.3);}),
-                //new DriveByTime(drivetrain, 3, -0.3)
-                //new InstantCommand(() -> drivetrain.stop())
-                // fullAutoShooterAssembly,
-                // fullAutoIntake.get(),
-                // fullAutoShooterAssembly,
-                // fullAutoIntake.get(),
-                // fullAutoShooterAssembly
-                // );
-                
     }
 } 
         

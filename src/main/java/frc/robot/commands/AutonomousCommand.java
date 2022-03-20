@@ -4,18 +4,18 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 public class AutonomousCommand extends SequentialCommandGroup
 {
 
-    public AutonomousCommand(/* the subsystems get passed in here? */)
+    public AutonomousCommand(/* do the subsystems get passed in here? */)
     {
        addCommands(
-        new SpinShooter_timed(3),
-        new UptakeAndShoot_group(),
-        new ArcadeDrive_timed(-0.5, 3),
-        new ExtendAndSpin_group(),
-        new SpinSpinner_timed(1),
-        new RetractAndSpin_group(),
-        new ArcadeDrive_timed(0.5, 3),
-        new SpinSpinner_timed(3),
-        new UptakeAndShoot_group()
-       );
-    }
+        new SpinShooter_timed(2),        //   2 seconds
+        new UptakeAndShoot_group(),      //   2 seconds
+        new ArcadeDrive_timed(-0.5, 1.5),// 1.5 seconds
+        new ExtendAndSpin_group(),       // 1.5 seconds
+        new SpinSpinner_timed(1),        //   1 second
+        new RetractAndSpin_group(),      // 1.5 seconds
+        new ArcadeDrive_timed(0.5, 1.5), // 1.5 seconds
+        new SpinShooter_timed(2),        //   2 seconds
+        new UptakeAndShoot_group()       // + 2 seconds
+       );                                // ===========
+    }                                    //  15 seconds
 }
