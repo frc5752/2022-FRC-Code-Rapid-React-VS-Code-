@@ -8,25 +8,18 @@ import frc.robot.subsystems.IntakeSubsystem;
 
 public class RetractIntake extends CommandBase
 {
-    // the subsystems that this command accesses
     private static IntakeSubsystem mIntakeSubsystem;
     private Joystick mDriverController;
     
-    // private final Joystick mDriverController;
     public RetractIntake(Joystick m_driver_controller)
     {
         mDriverController = m_driver_controller;
         mIntakeSubsystem = RobotContainer.m_intake;
     }
     
-    
     @Override
     public void initialize()
     {
-        // Stop the motor before reversing direction
-        //RobotContainer.m_vision.setString( "[RETRACT INTAKE] Initializing" );
-        //mIntakeSubsystem.setActuatorMotor(0);
- 
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorRetractSpeed);
     }
     

@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.ExtendIntake;
 import frc.robot.commands.RetractIntake;
 import frc.robot.commands.SpinShooter;
@@ -31,7 +32,6 @@ import frc.robot.subsystems.ShooterSubsystem;
 public class RobotContainer 
 {
     
-    //private final CommandScheduler scheduler;
     
     // Subsystems
     public final static DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
@@ -41,8 +41,7 @@ public class RobotContainer
     //public final static VisionSubsystem m_vision = new VisionSubsystem();
     private final Joystick m_driverController = new Joystick(0);
     
-    private final Command m_autoCommand=null;
-        //.andThen(() -> {m_shooter.setShooterMotor(0); });
+    private final Command m_autoCommand = new AutonomousCommand();
     
     /**
     * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -53,14 +52,9 @@ public class RobotContainer
         // identify targets, comment out the two lines below and uncomment the 
         // "public final static VisionSubsystem m_vision... line above
         UsbCamera camera = CameraServer.startAutomaticCapture(); // line to comment out
-        camera.setResolution(640, 480); //                       // tjhe other line to comment out
+        camera.setResolution(640, 480); //                       // the other line to comment out
         
         configureButtonBindings();
-
-        //m_drivetrain.setDefaultCommand(new RunCommand(() -> DrivetrainSubsystem.ArcadeDrive(m_driverController, m_drivetrain)));
-        //autoInit = new SequentialCommandGroup( {} );
-        //teleInit = new SequentialCommandGroup( {} );
-        //initTelemetry();
         m_drivetrain.setDefaultCommand(new ArcadeDrive(m_driverController, m_drivetrain));
     }
     

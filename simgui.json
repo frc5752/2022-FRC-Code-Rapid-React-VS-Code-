@@ -1,0 +1,35 @@
+{
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/DrivetrainSubsystem": "Subsystem",
+      "/LiveWindow/IntakeSubsystem": "Subsystem",
+      "/LiveWindow/ShooterSubsystem": "Subsystem",
+      "/LiveWindow/Ungrouped/DifferentialDrive[1]": "DifferentialDrive",
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/LiveWindow/Ungrouped/Talon SRX [1]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [3]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Victor SPX [2]": "Motor Controller"
+    }
+  },
+  "NetworkTables": {
+    "FMSInfo": {
+      "open": true
+    },
+    "LiveWindow": {
+      "IntakeSubsystem": {
+        "open": true
+      },
+      "ShooterSubsystem": {
+        "open": true
+      },
+      "Ungrouped": {
+        "Talon SRX [1]": {
+          "open": true
+        },
+        "open": true
+      },
+      "open": true
+    }
+  }
+}
