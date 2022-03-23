@@ -31,7 +31,9 @@ public class RetractIntake extends CommandBase
     @Override
     public boolean isFinished()
     {
-        return !mDriverController.getRawButton(Constants.kIntakeRetractBtn);
+        //return !mDriverController.getRawButton(Constants.kIntakeRetractBtn);
+        return (!mDriverController.getRawButton( Constants.kIntakeRetractBtn ) || mIntakeSubsystem.backLimitSwitch());
+
     }
     
     @Override

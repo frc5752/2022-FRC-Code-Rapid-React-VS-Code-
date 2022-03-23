@@ -41,31 +41,18 @@ import edu.wpi.first.wpilibj.DigitalInput;
     {
     //was initially just this
     mActuatorMotor.set(ControlMode.PercentOutput, speed);
-
-
-    //new stuff starts here
-    //if (speed < 0) {  //checks if acutator is retracting (speed is negative)
-    //  if (mBackLimitSwitch.get()) { //checks if back limit switch is hit
-    //    mActuatorMotor.set(ControlMode.PercentOutput, 0); //sets motor to 0% speed if limit switch is tripped
-    //    } else {  //if the limit switch was not hit, acutator retracts
-    //    mActuatorMotor.set(ControlMode.PercentOutput, speed); //sets the motor to retract speed
-    //  }
-
-    //} else {  //if the actuator is extending (speed is positive)
-    //  if (mFrontLimitSwitch.get()) { //checks if front limit switch is hit
-    //    mActuatorMotor.set(ControlMode.PercentOutput, 0); //sets motor to 0% speed if limit switch is tripped
-    //    } else {  //if the l  imit switch was not hit, acutator extends
-    //    mActuatorMotor.set(ControlMode.PercentOutput, speed); //sets the motor to extend speed
-    //  }
-    //}
-    //new stuff ends here
     } 
 	public boolean frontLimitSwitch()
 	{
-		return mFrontLimitSwitch.get();
+		return !mFrontLimitSwitch.get();
 	}
 
-    public void setSpinnerMotor(double speed)
+	public boolean backLimitSwitch()
+	{
+		return !mBackLimitSwitch.get();
+	}
+
+  public void setSpinnerMotor(double speed)
     {
       mSpinnerMotor.set(ControlMode.PercentOutput, speed);
     }
@@ -82,12 +69,10 @@ import edu.wpi.first.wpilibj.DigitalInput;
     @Override
     public void periodic() 
     {
-      // This method will be called once per scheduler run
     }
     
     @Override
     public void simulationPeriodic() 
     {
-      // This method will be called once per scheduler run during simulation
     }
   }
