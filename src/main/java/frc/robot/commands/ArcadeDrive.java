@@ -1,7 +1,6 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
@@ -40,7 +39,7 @@ public class ArcadeDrive extends CommandBase {
     double rotateSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_ROTATE_AXIS);
     
     m_drivetrain.arcadeDrive(0.5*rotateSpeed, 0.7*moveSpeed);
-    //these may be swapped
+    // rotateSpeed and moveSpeed might be incorrectly swapped
   }
   
   // Called once the command ends or is interrupted.
