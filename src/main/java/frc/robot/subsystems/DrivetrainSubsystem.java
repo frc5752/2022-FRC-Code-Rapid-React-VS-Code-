@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DrivetrainSubsystem extends SubsystemBase
 {
@@ -41,7 +42,8 @@ public class DrivetrainSubsystem extends SubsystemBase
     MotorControllerGroup rightMotors = new MotorControllerGroup(frontRightMotor, backRightMotor);
     MotorControllerGroup leftMotors = new MotorControllerGroup(frontLeftMotor, backLeftMotor);
     
-    differentialDrive = new DifferentialDrive(rightMotors, leftMotors);
+	differentialDrive = new DifferentialDrive(rightMotors, leftMotors);
+	
   }
   
   public void arcadeDrive(double moveSpeed, double rotateSpeed)
@@ -61,6 +63,6 @@ public class DrivetrainSubsystem extends SubsystemBase
   @Override
   public void periodic() 
   {
-    // This method will be called once per scheduler run
+	// This method will be called once per scheduler run
   }
 }

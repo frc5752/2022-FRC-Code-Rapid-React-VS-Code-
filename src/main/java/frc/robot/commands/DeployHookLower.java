@@ -4,23 +4,23 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ClimberSubsystem;
 
-public class ExtendIntake extends CommandBase
+public class DeployHookLower extends CommandBase
 {
-    private static IntakeSubsystem mIntakeSubsystem;
+    private static ClimberSubsystem mClimberSubsystem;
     private Joystick mDriverController;
 
-    public ExtendIntake(Joystick m_driver_controller)
+    public DeployHookLower(Joystick m_driver_controller)
     {
-        mIntakeSubsystem = RobotContainer.m_intake;
+        mClimberSubsystem = RobotContainer.m_climber;
         mDriverController = m_driver_controller;
     }
     
     @Override
     public void initialize()
     {
-        mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorExtendSpeed);
+        mClimberSubsystem.setDeployHookMotor(Constants.kDeployHookSpeedDown);
     }
     
     @Override
@@ -32,12 +32,12 @@ public class ExtendIntake extends CommandBase
     @Override
     public boolean isFinished()
     {
-		return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) | mIntakeSubsystem.frontLimitSwitch());
-    }
+		return !mDriverController.getRawButton( Constants.kDeployHookDownBtn );
+	}
     
     @Override
     public void end(boolean interrupted)
     {
-        mIntakeSubsystem.setActuatorMotor(0);
+        mClimberSubsystem.setDeployHookMotor(0);
     }
 }

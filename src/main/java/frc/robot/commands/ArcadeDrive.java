@@ -1,6 +1,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
@@ -24,17 +25,21 @@ public class ArcadeDrive extends CommandBase {
   @Override
   public void initialize()
   {
-    m_drivetrain.arcadeDrive(0, 0);
+	m_drivetrain.arcadeDrive(0, 0);
+	//RobotContainer.ahrs.reset();
+	//RobotContainer.ahrs.zeroYaw();
   }
   
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() 
   {
+	//SmartDashboard.putNumber("IMU_CompassHeading", RobotContainer.ahrs.getCompassHeading() );
+
     double moveSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_MOVE_AXIS);
     double rotateSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_ROTATE_AXIS);
     
-    m_drivetrain.arcadeDrive(0.5*rotateSpeed, 0.5*moveSpeed);
+    m_drivetrain.arcadeDrive(0.5*rotateSpeed, 0.7*moveSpeed);
     //these may be swapped
   }
   

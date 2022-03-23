@@ -4,40 +4,40 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
-public class ExtendIntake extends CommandBase
+public class ReverseUptake extends CommandBase
 {
-    private static IntakeSubsystem mIntakeSubsystem;
+    private static ShooterSubsystem mShooterSubsystem;
     private Joystick mDriverController;
 
-    public ExtendIntake(Joystick m_driver_controller)
+    public ReverseUptake(Joystick m_driver_controller)
     {
-        mIntakeSubsystem = RobotContainer.m_intake;
         mDriverController = m_driver_controller;
+        mShooterSubsystem = RobotContainer.m_shooter;
     }
+    
     
     @Override
     public void initialize()
     {
-        mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorExtendSpeed);
+        mShooterSubsystem.setUptakeMotor( -0.6 * Constants.kUptakeSpeed);
     }
     
     @Override
     public void execute()
     {
-
-       }
+    }
     
     @Override
     public boolean isFinished()
     {
-		return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) | mIntakeSubsystem.frontLimitSwitch());
+        return !mDriverController.getRawButton(Constants.kReverseUptakeBtn);
     }
     
     @Override
     public void end(boolean interrupted)
     {
-        mIntakeSubsystem.setActuatorMotor(0);
+        mShooterSubsystem.setUptakeMotor(0);
     }
 }
