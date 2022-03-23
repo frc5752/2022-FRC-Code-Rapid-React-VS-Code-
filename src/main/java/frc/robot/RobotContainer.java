@@ -37,7 +37,7 @@ public class RobotContainer
 	// Subsystems
 	// 2022 03 22 - mkpellegrino
 
-	public static AHRS ahrs;
+	//public static AHRS ahrs;
 
 	public final static DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
     public final static ShooterSubsystem m_shooter = new ShooterSubsystem();
@@ -46,7 +46,7 @@ public class RobotContainer
     //public final static VisionSubsystem m_vision = new VisionSubsystem();
     private final Joystick m_driverController = new Joystick(0);
     
-    private /*final*/ Command m_autoCommand; // = new AutonomousCommand();
+    private final Command m_autoCommand = new AutonomousCommand();
     
     /**
     * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -54,11 +54,11 @@ public class RobotContainer
     public RobotContainer() 
     {
         // mkpellegrino - 2022 03 23
-        autoChooser = new SendableChooser<Command>();
-        autoChooser.setDefaultOption("<Select a command>", null);
-        autoChooser.addOption("Shoot and Go", new AutonomousCommand());
-        autoChooser.addOption("Just Go", new ArcadeDrive_timed(0.75, 1));
-        SmartDashboard.putData("Init/Auto Selector", autoChooser);
+        //autoChooser = new SendableChooser<Command>();
+        //autoChooser.setDefaultOption("<Select a command>", null);
+        //autoChooser.addOption("Shoot and Go", new AutonomousCommand());
+        //autoChooser.addOption("Just Go", new ArcadeDrive_timed(0.75, 1));
+        //SmartDashboard.putData("Init/Auto Selector", autoChooser);
 
 
         // if you want to process the camera feed and have it automatically
@@ -112,7 +112,7 @@ public class RobotContainer
 		// mkpellegrino - 2022 03 22
 		try
 		{
-			ahrs = new AHRS(SPI.Port.kMXP);
+			//ahrs = new AHRS(SPI.Port.kMXP);
 			//ahrs.reset();
 			//ahrs.zeroYaw();
 	
@@ -125,7 +125,7 @@ public class RobotContainer
 		// Clean out the SmartDashboard Values of Old
 		for( int i=0; i<=9; i++ )
 		{
-			showOnDash(i, "");
+			//showOnDash(i, "");
 		}
 	
     }
@@ -152,7 +152,7 @@ public class RobotContainer
     */
     public Command getAutonomousCommand()
     {
-        m_autoCommand = autoChooser.getSelected();
+        //m_autoCommand = autoChooser.getSelected();
         return m_autoCommand;
 	}
 	
