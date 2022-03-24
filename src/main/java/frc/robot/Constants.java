@@ -31,7 +31,7 @@ public final class Constants {
     public static final int kMCIDSpinner= 2; //intake spinner motor controller id (VictorSPX)
     public static final int kMCIDUptake = 3; //uptake motor controller id (TalonSRX)
 	public static final int kMCIDShooter = 5; //shooter motor controller id ( Spark max )
-	public static final int kMCIDClimberMotor = 0; // Just a Spark plugged into PWM 0
+	public static final int kMCIDClimberMotor = 0; // PWM Spark plugged into PWM 0
 	public static final int kMCIDDeployHookMotor = 6; // Spark Max
     
     
@@ -44,7 +44,7 @@ public final class Constants {
 	public static final double kDeployHookSpeedUp = 0.5;
 	public static final double kDeployHookSpeedDown = -0.5;
 
-	public static final double kClimberUpSpeed = 0.75;
+	public static final double kClimberUpSpeed = 0.5;
 	public static final double kClimberDownSpeed = -0.5;
     
     public static final int kIntakeExtendBtn = 6; //5
