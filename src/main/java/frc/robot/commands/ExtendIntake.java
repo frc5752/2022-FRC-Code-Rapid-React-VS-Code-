@@ -15,24 +15,30 @@ public class ExtendIntake extends CommandBase
     {
         mIntakeSubsystem = RobotContainer.m_intake;
         mDriverController = m_driver_controller;
+        addRequirements(RobotContainer.m_intake);
     }
     
     @Override
     public void initialize()
     {
+        /* check to see if the front limit switch returns
+        true.  if it does, then DON'T set the motor, or
+        set the motor to 0 */
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorExtendSpeed);
     }
     
     @Override
     public void execute()
     {
-
-       }
+    }
     
     @Override
     public boolean isFinished()
     {
-		return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) || mIntakeSubsystem.frontLimitSwitch());
+        //if( !mIntakeSubsystem.frontLimitSwitch() ) return true;
+        //if( !mDriverController.getRawButton( Constants.kIntakeExtendBtn ) ) return true;
+        //return false;
+		return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) );
     }
     
     @Override

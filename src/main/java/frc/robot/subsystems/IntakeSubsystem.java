@@ -44,12 +44,12 @@ import edu.wpi.first.wpilibj.DigitalInput;
     } 
 	public boolean frontLimitSwitch()
 	{
-		return !mFrontLimitSwitch.get();
+		return mFrontLimitSwitch.get();
 	}
 
 	public boolean backLimitSwitch()
 	{
-		return !mBackLimitSwitch.get();
+		return mBackLimitSwitch.get();
 	}
 
   public void setSpinnerMotor(double speed)

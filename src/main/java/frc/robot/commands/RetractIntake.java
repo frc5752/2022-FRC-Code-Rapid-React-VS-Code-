@@ -15,6 +15,7 @@ public class RetractIntake extends CommandBase
     {
         mDriverController = m_driver_controller;
         mIntakeSubsystem = RobotContainer.m_intake;
+        addRequirements(RobotContainer.m_intake);
     }
     
     @Override
@@ -31,8 +32,8 @@ public class RetractIntake extends CommandBase
     @Override
     public boolean isFinished()
     {
-        //return !mDriverController.getRawButton(Constants.kIntakeRetractBtn);
-        return (!mDriverController.getRawButton( Constants.kIntakeRetractBtn ) || mIntakeSubsystem.backLimitSwitch());
+        return !mDriverController.getRawButton(Constants.kIntakeRetractBtn);
+        //return (!mDriverController.getRawButton( Constants.kIntakeRetractBtn ) || !mIntakeSubsystem.backLimitSwitch());
 
     }
     

@@ -16,6 +16,8 @@ public class SpinSpinner_timed extends CommandBase
     {
         mIntakeSubsystem = RobotContainer.m_intake;
         timeout = t;
+        //addRequirements(RobotContainer.m_intake);
+
     }
     
     
