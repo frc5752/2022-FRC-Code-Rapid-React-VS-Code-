@@ -39,7 +39,7 @@ public class ExtendIntake_timed extends CommandBase
     public boolean isFinished()
     {
         
-        return my_timer.hasElapsed(timeout);
+        return (my_timer.hasElapsed(timeout) || mIntakeSubsystem.frontLimitSwitch());
     }
     
     @Override
