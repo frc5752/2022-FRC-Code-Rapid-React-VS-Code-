@@ -32,7 +32,7 @@ public final class Constants {
     public static final int kMCIDUptake = 3; //uptake motor controller id (TalonSRX)
 	public static final int kMCIDShooter = 5; //shooter motor controller id ( Spark max )
 	public static final int kMCIDClimberMotor = 0; // PWM Spark plugged into PWM 0
-	public static final int kMCIDDeployHookMotor = 6; // Spark Max
+	public static final int kMCIDDeployHookMotor = 1; // Spark Max
     
     
     public static final double kIntakeActuatorExtendSpeed = 0.5; // the speed of the motor that extends and retracts the intake arms (VictorSPX)

@@ -25,6 +25,7 @@ public class RetractIntake_timed extends CommandBase
     @Override
     public void initialize()
     {
+        if( mIntakeSubsystem.backLimitSwitch() ) return;
         my_timer.reset();
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorRetractSpeed);
         my_timer.start();
@@ -41,7 +42,7 @@ public class RetractIntake_timed extends CommandBase
     public boolean isFinished()
     {
         
-        return (my_timer.hasElapsed(timeout) || mIntakeSubsystem.frontLimitSwitch());
+        return (my_timer.hasElapsed(timeout) || mIntakeSubsystem.backLimitSwitch());
     }
     
     @Override

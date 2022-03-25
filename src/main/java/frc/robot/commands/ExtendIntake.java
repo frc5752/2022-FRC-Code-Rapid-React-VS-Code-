@@ -24,6 +24,8 @@ public class ExtendIntake extends CommandBase
         /* check to see if the front limit switch returns
         true.  if it does, then DON'T set the motor, or
         set the motor to 0 */
+        if( mIntakeSubsystem.frontLimitSwitch() ) return;
+
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorExtendSpeed);
     }
     
@@ -35,10 +37,7 @@ public class ExtendIntake extends CommandBase
     @Override
     public boolean isFinished()
     {
-        //if( !mIntakeSubsystem.frontLimitSwitch() ) return true;
-        //if( !mDriverController.getRawButton( Constants.kIntakeExtendBtn ) ) return true;
-        //return false;
-		return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) );
+		return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) || mIntakeSubsystem.frontLimitSwitch() );
     }
     
     @Override

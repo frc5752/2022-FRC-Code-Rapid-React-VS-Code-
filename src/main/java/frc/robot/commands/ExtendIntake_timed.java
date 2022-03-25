@@ -25,6 +25,7 @@ public class ExtendIntake_timed extends CommandBase
     @Override
     public void initialize()
     {
+        if( mIntakeSubsystem.frontLimitSwitch() ) return;
         my_timer.reset();
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorExtendSpeed);
         my_timer.start();

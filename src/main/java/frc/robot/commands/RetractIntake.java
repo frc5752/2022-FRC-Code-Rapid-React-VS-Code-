@@ -21,6 +21,7 @@ public class RetractIntake extends CommandBase
     @Override
     public void initialize()
     {
+        if( mIntakeSubsystem.backLimitSwitch() ) return;
         mIntakeSubsystem.setActuatorMotor(Constants.kIntakeActuatorRetractSpeed);
     }
     
@@ -32,8 +33,7 @@ public class RetractIntake extends CommandBase
     @Override
     public boolean isFinished()
     {
-        return !mDriverController.getRawButton(Constants.kIntakeRetractBtn);
-        //return (!mDriverController.getRawButton( Constants.kIntakeRetractBtn ) || !mIntakeSubsystem.backLimitSwitch());
+        return (!mDriverController.getRawButton( Constants.kIntakeRetractBtn ) || mIntakeSubsystem.backLimitSwitch());
 
     }
     
