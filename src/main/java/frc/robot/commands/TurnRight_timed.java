@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
@@ -12,7 +11,6 @@ import frc.robot.subsystems.DrivetrainSubsystem;
 
 public class TurnRight_timed extends CommandBase {
   /** Creates a new RT_timed. */
-  public Joystick mDriverController;
   public static DrivetrainSubsystem m_drivetrain;
   Timer my_timer = new Timer();
   double timeout = 0;
@@ -32,7 +30,7 @@ public class TurnRight_timed extends CommandBase {
   public void initialize() 
   {
     my_timer.reset();
-    m_drivetrain.arcadeDrive(0, -rotateSpeed);
+    m_drivetrain.arcadeDrive(0.5*rotateSpeed, -0.7*moveSpeed);
     my_timer.start();
   }
 

@@ -2,8 +2,7 @@
 
   import edu.wpi.first.wpilibj2.command.SubsystemBase;
   import frc.robot.Constants;
-
-  import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -32,8 +31,8 @@ import edu.wpi.first.wpilibj.DigitalInput;
       //limit switches 
       //!!CHECK THE PORTS ON THE LIMIT SWITCHES TO MAKE SURE THEY ARE RIGHT!!
       //we can set the port values as Constants later if we want to
-      mFrontLimitSwitch = new DigitalInput(0); //set port value here
-      mBackLimitSwitch = new DigitalInput(1); //set port value here
+      mFrontLimitSwitch = new DigitalInput(Constants.kFrontLimitSwitchDIOPort); //set port value here
+      mBackLimitSwitch = new DigitalInput(Constants.kBackLimitSwitchDIOPort); //set port value here
     }
     
     // Subsystem methods - actions the robot can take - should be placed here.
