@@ -39,6 +39,7 @@ public final class Constants {
     public static final double kIntakeSpinnerSpeed = -1;  //the speed of the motor that spins to first grab the ball (VictorSPX)
     public static final double kUptakeSpeed = 0.75;  //0.75 the speed of the motor that spins to push the ball to the shooter motor (TalonSRX)
 	public static final double kShooterSpeed = -0.7;  //the speed of the motor that spins to shoot the ball (CAN Spark)
+    public static final double kShooterSpeedInAuto = -0.7; //the speed of the motor that spins to shoot the ball (CAN Spark)
 	
 	public static final double kDeployHookSpeedUp = 0.5;
 	public static final double kDeployHookSpeedDown = -0.5;
