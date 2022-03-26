@@ -38,7 +38,7 @@ public class ArcadeDrive extends CommandBase {
     double moveSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_MOVE_AXIS);
     double rotateSpeed = mDriverController.getRawAxis(Constants.Controls.DRIVER_CONTROLLER_ROTATE_AXIS);
     
-    m_drivetrain.arcadeDrive(0.5*rotateSpeed, 0.7*moveSpeed);
+    m_drivetrain.arcadeDrive(0.5*rotateSpeed, 0.8*moveSpeed);//7
     // rotateSpeed and moveSpeed might be incorrectly swapped
   }
   

@@ -37,7 +37,8 @@ public class ExtendIntake extends CommandBase
     @Override
     public boolean isFinished()
     {
-		return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) || mIntakeSubsystem.frontLimitSwitch() );
+		return !mDriverController.getRawButton( Constants.kIntakeExtendBtn );
+		//return (!mDriverController.getRawButton( Constants.kIntakeExtendBtn ) || mIntakeSubsystem.frontLimitSwitch() );
     }
     
     @Override
