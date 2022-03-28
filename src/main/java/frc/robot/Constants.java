@@ -34,8 +34,8 @@ public final class Constants {
 	public static final int kMCIDClimberMotor = 0; // PWM Spark plugged into PWM 0
 	public static final int kMCIDDeployHookMotor = 1; // PWM Spark plugged into PWM 1
     
-    public static final double kIntakeActuatorExtendSpeed = 0.6; // the speed of the motor that extends and retracts the intake arms (VictorSPX)
-    public static final double kIntakeActuatorRetractSpeed = -0.6; // the speed of the motor that spins to bring a ball aboard (VictorSPX)
+    public static final double kIntakeActuatorExtendSpeed = -0.6; // the speed of the motor that extends and retracts the intake arms (VictorSPX)
+    public static final double kIntakeActuatorRetractSpeed = 0.6; // the speed of the motor that spins to bring a ball aboard (VictorSPX)
     public static final double kIntakeSpinnerSpeed = -1;  //the speed of the motor that spins to first grab the ball (VictorSPX)
     public static final double kUptakeSpeed = 0.75;  //0.75 the speed of the motor that spins to push the ball to the shooter motor (TalonSRX)
 	public static final double kShooterSpeed = -0.825;  //the speed of the motor that spins to shoot the ball (CAN Spark)
